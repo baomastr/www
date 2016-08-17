@@ -1,0 +1,248 @@
+@import "reset.css";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+}
+.clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px;
+}
+header {
+  nav {
+    .logo {
+    }
+    .registration {
+      float: right;
+      margin-top: 30px;
+      font-weight: 800;
+      a {
+        text-decoration: none;
+        color: #424141;
+        &:hover {
+
+        }
+      }
+    }
+  }
+  .main-header {
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    color: #ffffff;
+    .title {
+      text-align: center;
+      font-weight: 800;
+      h1 {
+        font-size: 40px;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-weight: 100;
+        font-size: 20px;
+        span {
+          font-size: 16px;
+          float: right;
+        }
+      }
+    }
+    .formbox {
+      display: inline-block;
+      padding: 30px;
+      background-color: black;
+      filter: alpha(Opacity=27);
+      background-color: rgba(0, 0, 0, 0.27);
+      border-radius: 10px;
+    }
+    form {
+      display: block;
+      .formrow {
+        display: block;
+        min-width: 240px;
+        margin-bottom: 10px;
+        label {
+          font-weight: 100;
+        }
+        input {
+          background-image: url(../img/name.png);
+          background-repeat: no-repeat; /*Убираем повтор изображения*/
+          background-size: 10%;
+          background-position: 15px; /*Позиционируем*/
+          outline: none; /*убираем стандартную обводку браузера*/
+          -moz-border-radius: 5px; /*закругляем углы для Mozilla*/
+          -webkit-border-radius: 5px; /*закругляем углы для Chrome, Safari*/
+          border-radius: 5px; /*закругляем углы для остальных браузеров*/
+          padding-left: 45px; /*отступ слева от ввода, чтобы текст не был на картинке(выбирать по размеру картинки)*/
+          height: 40px; /*высота строки ввода*/
+          font-size: 13px; /*размер шрифта*/
+          width: 82%;
+          margin-top: 10px;
+          border: none;
+          &[type="name"]{
+            background-image: url(../img/name.png);
+          }
+          &[type="email"]{
+            background-image: url(../img/mail.png);
+          }
+          &[type="tel"]{
+            background-image: url(../img/phone.png);
+          }
+          &[type="submit"]{
+            display: inline-block;
+            background: #9a2753;
+            width: 100%;
+            cursor: pointer;
+            padding: 10px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+section {
+  background-color: #eeeeee;
+  text-align: center;
+  h2 {
+    color: #9a2753;
+    font-size: 40px;
+    font-weight: 800;
+  }
+  h3 {
+    color: #424141;
+    font-weight: 800;
+    font-size: 40px;
+    span {
+      color: #9a2753;
+      font-size: 30px;
+      font-weight: 100;
+    }
+  }
+  img {
+    &.visible-xs {
+      display: none;
+    }
+    &.visible-lg {
+      display: block;
+    }
+    margin: 20px 0;
+    max-width: 100%;
+    height: auto;
+  }
+}
+footer {
+  padding-bottom: 20px;
+  h3 {
+    color: #9a2753;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .listbox{
+    margin: 20px 0;
+    ul {
+      vertical-align: top;
+      display: inline-block;
+      width: 45%;
+      padding: 0 10px;
+      &.leftlist,
+      &.rightlist {
+      }
+      li {
+        font-size: 12px;
+        display: list-item;
+        list-style: circle;
+        //list-style-type: circle;
+      }
+    }
+  }
+  .partners {
+    display: inline-block;
+    width: 70%;
+    ul {
+      li {
+        display: inline-block;
+        padding: 5px;
+        a {
+          img {
+            max-width: 60%;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    width: 30%;
+    display: inline-block;
+    float: right;
+    p {
+      font-size: 14px;
+      font-weight: 600;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    a {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 14px;
+      text-decoration: none;
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 20px;
+      background-color: #babab9;
+    }
+  }
+}
+
+@media only screen
+and (min-width : 320px)
+and (max-width : 768px) {
+  header .main-header {
+    text-align: center;
+    .title {
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 25px;
+      }
+    }
+    .formbox {
+      margin: 0 auto;
+      padding: 20px;
+    }
+  }
+  section {
+    img {
+      &.visible-lg {
+        display: none;
+      }
+      &.visible-xs {
+        display: inline-block;
+        margin: 20 auto;
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    .partners {
+      width: 100%;
+    }
+    .copyright {
+      width: 100%;
+      a {
+        padding: 10px;
+      }
+    }
+  }
+}
