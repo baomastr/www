@@ -6,7 +6,7 @@ body { font-family: 'Roboto', sans-serif; background-color: #ffffff; }
 
 .container { max-width: 980px; margin: 0 auto; padding: 10px; }
 
-header nav .registration { float: right; margin-top: 30px; font-weight: 800; }
+header nav .registration { float: right; margin-top: 30px; font-weight: 800; color: #424141; }
 
 header nav .registration a { text-decoration: none; color: #424141; }
 
@@ -14,13 +14,13 @@ header .main-header { background: url(../img/bg.jpg) no-repeat center; backgroun
 
 header .main-header .title { text-align: center; font-weight: 800; }
 
-header .main-header .title h1 { font-size: 40px; }
+header .main-header .title h1 { text-transform: uppercase; font-size: 30px; line-height: 35px; }
 
-header .main-header .title h2 { font-size: 35px; }
+header .main-header .title h2 { text-transform: uppercase; font-size: 25px; line-height: 35px; }
 
-header .main-header .title p { font-weight: 100; font-size: 20px; }
+header .main-header .title p { font-weight: 100; font-size: 20px; line-height: 35px; }
 
-header .main-header .title p span { font-size: 16px; float: right; }
+header .main-header .title p span { text-transform: uppercase; font-size: 16px; float: right; }
 
 header .main-header .formbox { display: inline-block; padding: 30px; background-color: black; filter: alpha(Opacity=27); background-color: rgba(0, 0, 0, 0.27); border-radius: 10px; }
 
@@ -42,13 +42,13 @@ header .main-header form .formrow input[type="submit"] { display: inline-block; 
 
 section { background-color: #eeeeee; text-align: center; }
 
-section h2 { color: #9a2753; font-size: 40px; font-weight: 800; }
+section h2 { color: #9a2753; font-size: 25px; font-weight: 800; text-transform: uppercase; }
 
-section h3 { color: #424141; font-weight: 800; font-size: 40px; }
+section h3 { color: #424141; font-weight: 800; font-size: 25px; text-transform: uppercase; margin: 10px 0; }
 
-section h3 span { color: #9a2753; font-size: 30px; font-weight: 100; }
+section span { display: inline-block; text-transform: uppercase; color: #9a2753; font-size: 20px; font-weight: 100; }
 
-section img { margin: 20px 0; max-width: 100%; height: auto; }
+section img { margin: 20px auto; max-width: 80%; height: auto; }
 
 section img.visible-xs { display: none; }
 
@@ -58,17 +58,21 @@ footer { padding-bottom: 20px; }
 
 footer h3 { color: #9a2753; font-size: 20px; font-weight: 600; }
 
-footer .listbox { margin: 20px 0; }
+footer .listbox { margin: 20px 0; padding-left: 20px; }
 
-footer .listbox ul { vertical-align: top; display: inline-block; width: 45%; padding: 0 10px; }
+footer .listbox ul { text-align: left; vertical-align: top; display: inline-block; width: 45%; padding: 0 10px; }
 
 footer .listbox ul li { font-size: 12px; display: list-item; list-style: circle; }
 
+footer .listbox ul span { font-size: 12px; }
+
+footer .listbox ul span a { color: #424141; }
+
 footer .partners { display: inline-block; width: 70%; }
 
-footer .partners ul li { display: inline-block; padding: 5px; }
+footer .partners ul li { display: inline-block; padding: 5px; margin: 0; }
 
-footer .partners ul li a img { max-width: 60%; }
+footer .partners ul li a img { max-width: 80%; }
 
 footer .copyright { width: 30%; display: inline-block; float: right; }
 
@@ -76,13 +80,14 @@ footer .copyright p { font-size: 14px; font-weight: 600; display: block; margin-
 
 footer .copyright a { display: inline-block; text-transform: uppercase; font-size: 14px; text-decoration: none; color: #ffffff; border-radius: 5px; padding: 20px; background-color: #babab9; }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) { header .main-header { text-align: center; }
+@media only screen and (max-width: 768px) { header .main-header { text-align: center; }
   header .main-header .title h1 { font-size: 30px; }
   header .main-header .title h2 { font-size: 25px; }
   header .main-header .formbox { margin: 0 auto; padding: 20px; }
   section img.visible-lg { display: none; }
-  section img.visible-xs { display: inline-block; margin: 20 auto; }
+  section img.visible-xs { display: inline-block; margin: 20px auto; width: 100%; }
   footer { text-align: center; }
+  footer .listbox ul { padding: 0; width: 100%; }
   footer .partners { width: 100%; }
   footer .copyright { width: 100%; }
   footer .copyright a { padding: 10px; } }

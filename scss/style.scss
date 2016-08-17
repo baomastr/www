@@ -25,6 +25,7 @@ header {
       float: right;
       margin-top: 30px;
       font-weight: 800;
+      color: #424141;
       a {
         text-decoration: none;
         color: #424141;
@@ -42,15 +43,21 @@ header {
       text-align: center;
       font-weight: 800;
       h1 {
-        font-size: 40px;
+        text-transform: uppercase;
+        font-size: 30px;
+        line-height: 35px;
       }
       h2 {
-        font-size: 35px;
+        text-transform: uppercase;
+        font-size: 25px;
+        line-height: 35px;
       }
       p {
         font-weight: 100;
         font-size: 20px;
+        line-height: 35px;
         span {
+          text-transform: uppercase;
           font-size: 16px;
           float: right;
         }
@@ -115,18 +122,23 @@ section {
   text-align: center;
   h2 {
     color: #9a2753;
-    font-size: 40px;
+    font-size: 25px;
     font-weight: 800;
+    text-transform: uppercase;
   }
   h3 {
     color: #424141;
     font-weight: 800;
-    font-size: 40px;
-    span {
-      color: #9a2753;
-      font-size: 30px;
-      font-weight: 100;
-    }
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+  span {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #9a2753;
+    font-size: 20px;
+    font-weight: 100;
   }
   img {
     &.visible-xs {
@@ -135,8 +147,8 @@ section {
     &.visible-lg {
       display: block;
     }
-    margin: 20px 0;
-    max-width: 100%;
+    margin: 20px auto;
+    max-width: 80%;
     height: auto;
   }
 }
@@ -149,7 +161,9 @@ footer {
   }
   .listbox{
     margin: 20px 0;
+    padding-left: 20px;
     ul {
+      text-align: left;
       vertical-align: top;
       display: inline-block;
       width: 45%;
@@ -163,6 +177,12 @@ footer {
         list-style: circle;
         //list-style-type: circle;
       }
+      span {
+        font-size: 12px;
+        a {
+          color: #424141;
+        }
+      }
     }
   }
   .partners {
@@ -172,9 +192,10 @@ footer {
       li {
         display: inline-block;
         padding: 5px;
+        margin: 0;
         a {
           img {
-            max-width: 60%;
+            max-width: 80%;
           }
         }
       }
@@ -205,7 +226,6 @@ footer {
 }
 
 @media only screen
-and (min-width : 320px)
 and (max-width : 768px) {
   header .main-header {
     text-align: center;
@@ -215,6 +235,9 @@ and (max-width : 768px) {
       }
       h2 {
         font-size: 25px;
+      }
+      p {
+        //color: #9a2753;
       }
     }
     .formbox {
@@ -229,12 +252,22 @@ and (max-width : 768px) {
       }
       &.visible-xs {
         display: inline-block;
-        margin: 20 auto;
+        margin: 20px auto;
+        width: 100%;
       }
     }
   }
   footer {
     text-align: center;
+    .listbox {
+      ul {
+        padding: 0;
+        width: 100%;
+        li {
+
+        }
+      }
+    }
     .partners {
       width: 100%;
     }
