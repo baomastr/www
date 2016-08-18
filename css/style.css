@@ -78,7 +78,7 @@ footer .copyright { width: 30%; display: inline-block; float: right; }
 
 footer .copyright p { font-size: 14px; font-weight: 600; display: block; margin-top: 20px; margin-bottom: 20px; }
 
-footer .copyright a { display: inline-block; text-transform: uppercase; font-size: 14px; text-decoration: none; color: #ffffff; border-radius: 5px; padding: 20px; background-color: #babab9; }
+footer .copyright .polit { display: inline-block; text-transform: uppercase; font-size: 14px; text-decoration: none; color: #ffffff; border-radius: 5px; padding: 20px; background-color: #babab9; }
 
 @media only screen and (max-width: 768px) { header .main-header { text-align: center; }
   header .main-header .wrap { background-color: rgba(0, 0, 0, 0.45); }
@@ -91,4 +91,4 @@ footer .copyright a { display: inline-block; text-transform: uppercase; font-siz
   footer .listbox ul { padding: 0; width: 100%; }
   footer .partners { width: 100%; }
   footer .copyright { width: 100%; }
-  footer .copyright a { padding: 10px; } }
+  footer .copyright .polit { padding: 10px; } }
