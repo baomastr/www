@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Russia&AsiaForum</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="apple-touch-icon-precomposed" href="apple-touch-favicon.png"/>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<!--[if lt IE 9]>
@@ -26,24 +28,26 @@
 		</div>
 	</nav>
 	<div class="main-header">
-		<div class="container">
-			<div class="title">
-				<h1>МЕЖДУНАРОДНЫЙ БИЗНЕС-ФОРУМ «РОССИЯ-АЗИЯ: <br>
-					СОТРУДНИЧЕСТВО РАДИ ПРОЦВЕТАНИЯ»
+		<div class="wrap">
+			<div class="container">
+				<div class="title">
+					<h1>МЕЖДУНАРОДНЫЙ БИЗНЕС-ФОРУМ «РОССИЯ-АЗИЯ: <br>
+						СОТРУДНИЧЕСТВО РАДИ ПРОЦВЕТАНИЯ»
 					</h1>
-				<h2>1-3 НОЯБРЯ 2016, МОСКВА, HOLIDAY INN SOKOLNIKI</h2>
-				<p>Укрепляем сотрудничество между государствами и открываем для бизнеса новые горизонты
-					<br><span>ЯЗЫКИ ФОРУМА: РУССКИЙ, АНГЛИЙСКИЙ, КИТАЙСКИЙ</span>
-					<span class="clearfix"></span>
-				</p>
-			</div>
-			<div class="formbox">
-				<form action="">
-					<div class="formrow"><label for="name">Представьтесь, пожалуйста</label><br><input id="name" name="name" type="text" required></div>
-					<div class="formrow"><label for="mail">Ваш e-mail</label><br><input id="mail" name="mail" type="email"></div>
-					<div class="formrow"><label for="phone">Ваш телефон</label><br><input id="phone" name="phone" type="tel" required></div>
-					<div class="formrow"><input type="submit" value="БРОНИРОВАТЬ"></div>
-				</form>
+					<h2>1-3 НОЯБРЯ 2016, МОСКВА, HOLIDAY INN SOKOLNIKI</h2>
+					<p>Укрепляем сотрудничество между государствами и открываем для бизнеса новые горизонты
+						<br><span>ЯЗЫКИ ФОРУМА: РУССКИЙ, АНГЛИЙСКИЙ, КИТАЙСКИЙ</span>
+						<span class="clearfix"></span>
+					</p>
+				</div>
+				<div class="formbox">
+					<form action="contacts.php" method="POST" class="form" id="form">
+						<div class="formrow"><label for="text">Представьтесь, пожалуйста</label><br><input id="text" class="form__input" name="text" type="text" required></div>
+						<div class="formrow"><label for="mail">Ваш e-mail</label><br><input id="mail" class="form__input" name="email" type="email" required></div>
+						<div class="formrow"><label for="phone">Ваш телефон</label><br><input id="phone" class="form__input" name="tel" type="tel" required></div>
+						<div class="formrow"><input formaction="#" type="submit" value="БРОНИРОВАТЬ" class="form__input form__input_btn"></div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -111,10 +115,34 @@
 		<div class="copyright">
 			<p>ИНН: 7731103639 <br>
 				ОГРН: 1157746049856 <br>
-				По вопросам: businestekh@bk.ru </p>
-			<a href="">политика конфиденциальности</a>
+				По вопросам: <a href="mailto:businestekh@bk.ru">businestekh@bk.ru</a> </p>
+			<a href="" class="polit">политика конфиденциальности</a>
 		</div>
 	</div>
 </footer>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+	document.getElementById('form').addEventListener('submit', function(evt){
+		var http = new XMLHttpRequest(), f = this;
+		evt.preventDefault();
+		http.open("POST", "contacts.php", true);
+		http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		http.send("email=" + f.email.value + " tel=" + f.tel.value + " name=" + f.text.value);
+		http.onreadystatechange = function() {
+			if (http.readyState == 4 && http.status == 200) {
+				alert('Спасибо, мы свяжемся с Вами в ближайшее время!');
+				f.text.removeAttribute('value');
+				f.text.value='';
+				f.email.removeAttribute('value');
+				f.email.value='';
+				f.tel.removeAttribute('value');
+				f.tel.value='';
+			}
+		};
+		http.onerror = function() {
+			alert('Извините, данные не были переданы');
+		}
+	}, false);
+</script>
 </body>
 </html>
