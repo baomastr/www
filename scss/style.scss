@@ -212,7 +212,7 @@ footer {
       margin-top: 20px;
       margin-bottom: 20px;
     }
-    a {
+    .polit {
       display: inline-block;
       text-transform: uppercase;
       font-size: 14px;
@@ -229,6 +229,9 @@ footer {
 and (max-width : 768px) {
   header .main-header {
     text-align: center;
+    .wrap {
+      background-color: rgba(0, 0, 0, 0.45);
+    }
     .title {
       h1 {
         font-size: 30px;
@@ -272,7 +275,7 @@ and (max-width : 768px) {
     }
     .copyright {
       width: 100%;
-      a {
+      .polit {
         padding: 10px;
       }
     }
